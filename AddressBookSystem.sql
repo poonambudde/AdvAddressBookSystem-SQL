@@ -23,6 +23,10 @@ values
 ('Priya', 'pawar', 'shivaji chowk', 'mumbai', 'andhra', 748949, 8149703160, 'pri34@gmail.com'),
 ('Pooja', 'hudge', 'ashok hotel', 'udagir', 'rajshthan', 413562, 9149713160, 'phudge123@gmail.com'),
 ('gouri', 'shete', 'bashweshwar', 'bangalore', 'chennai', 587315, 9740049061, 'gourishete@gmail.com');
-
 -- for Displaying adressbook
+select * from AddressBook_Table;
+
+--UC4 - Edit existing contact person using name
+update AddressBook_Table set City = 'Beed' where FirstName = 'gouri' and LastName = 'shete';
+update AddressBook_Table set State = 'Goa' where FirstName = 'Pooja' and LastName = 'hudge';
 select * from AddressBook_Table;
