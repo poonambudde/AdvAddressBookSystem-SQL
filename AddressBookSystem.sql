@@ -2,7 +2,7 @@
 create database AddressBook_Service;
 use AddressBook_Service;
 
---UC2 - Create AddressBook Table
+--UC2 - Create AddressBook Table.
 create table AddressBook_Table
 (
 FirstName varchar(100),
@@ -16,7 +16,7 @@ Email varchar(100)
 );
 select * from AddressBook_Table;
 
---UC3 - Insert new contacts into Addressbook
+--UC3 - Insert new contacts into Addressbook.
 insert into AddressBook_Table(FirstName, LastName, Address, City, State, Zip, PhoneNumber, Email)
 values
 ('Poonam', 'budde', 'narayan nagar', 'Latur', 'Maharashtra', 413678, 8179713160, 'poonam@gmail.com'),
@@ -26,7 +26,11 @@ values
 -- for Displaying adressbook
 select * from AddressBook_Table;
 
---UC4 - Edit existing contact person using name
+--UC4 - Edit existing contact person using name.
 update AddressBook_Table set City = 'Beed' where FirstName = 'gouri' and LastName = 'shete';
 update AddressBook_Table set State = 'Goa' where FirstName = 'Pooja' and LastName = 'hudge';
+select * from AddressBook_Table;
+
+--UC5 - Delete existing contact person using name.
+delete from AddressBook_Table where FirstName = 'Pooja' and LastName = 'hudge';
 select * from AddressBook_Table;
