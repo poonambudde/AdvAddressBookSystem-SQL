@@ -38,7 +38,7 @@ select * from AddressBook_Table;
 --UC6 - Retrieve person belonging to a city or state from AddressBook.
 select * from AddressBook_Table where City = 'Latur' or State = 'Maharashtra';
 
---UC7 - Size of AddressBook by city and state 
+--UC7 - Size of AddressBook by city and state.
 select COUNT(*) as StateCount, State from AddressBook_Table group by State;
 select COUNT(*) as CityCount, City from AddressBook_Table group by City;
 
@@ -52,3 +52,8 @@ select * from AddressBook_Table;
 update AddressBook_Table set AddressBookName = 'family address book', AddressBookType = 'Family' where FirstName = 'Poonam';
 update AddressBook_Table set AddressBookName = 'friends address book', AddressBookType = 'Friends' where FirstName = 'Priya';
 update AddressBook_Table set AddressBookName = 'profession address book', AddressBookType = 'Profession' where FirstName = 'gouri';
+
+--UC10 - Get number of contact persons i,e count by type.
+select count(AddressBookType) as 'NumberOfContacts' from AddressBook_Table where AddressBookType='Family';
+select count(AddressBookType) as 'NumberOfContacts' from AddressBook_Table where AddressBookType='Friends';
+select count(AddressBookType) as 'NumberOfContacts' from AddressBook_Table where AddressBookType='Profession';
