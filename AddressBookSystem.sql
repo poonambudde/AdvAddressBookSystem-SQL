@@ -58,7 +58,7 @@ select count(AddressBookType) as 'NumberOfContacts' from AddressBook_Table where
 select count(AddressBookType) as 'NumberOfContacts' from AddressBook_Table where AddressBookType='Friends';
 select count(AddressBookType) as 'NumberOfContacts' from AddressBook_Table where AddressBookType='Profession';
 
---UC11-- Add person to friend and family
+--UC11 - Add person to friend and family
 insert into AddressBook_Table(FirstName, LastName, Address, City, State, Zip, PhoneNumber, Email, AddressBookName, AddressBookType)
 values
 ('Virat', 'Kohli', 'RCB', 'Bangalore', 'Karnataka', 560040, 1231231235, 'virat@gmail.com','friends address book', 'Friends'),
@@ -103,3 +103,22 @@ join addressbookMapping d
 on a.contactid = d.contactId
 join AddressBookNames b
 on b.addressBookId= d.addressbookId
+
+--UC13 - Retrieving data using new table structure.
+--For UC6
+select FirstName,LastName,city from AddressBook_Table where FirstName='Virat';
+
+--For UC7
+select city,count(*) from AddressBook_Table where city='Latur' group by city;
+
+--For UC8
+select * from  AddressBook_Table where city='Latur' order by FirstName,LastName;
+
+--For UC10
+select typename,count(*) numberOfContactPersons from AddressBook_Table a
+join addressbookMapping am
+on am.contactid= a.contactid
+join TypesOfContacts t
+on t.typeid= am.addressbookid
+group by t.typename;
+select * from AddressBook_Table;
